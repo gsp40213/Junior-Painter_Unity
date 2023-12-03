@@ -14,7 +14,7 @@ public class Text_Setting : UI_Class.TextSetting
 
         // text message and size
         text.text = message;
-        text.fontSize = Screen.width / 2 * textSize;
+        text.fontSize = Screen.width / Screen.width * textSize;
     }
 
     public override void areaText(Vector2 anchorsMin, Vector2 anchorsMax, Vector2 pivot)

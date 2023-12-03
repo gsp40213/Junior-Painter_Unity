@@ -30,6 +30,26 @@ public class WindwosUI_Editor : Editor
 
         var script_quit = target as Windows_UI;
         script_quit.quit = EditorGUILayout.ObjectField("Quit", script_quit.quit, typeof(Button), true) as Button;
+
+        // 建立檔案
+        EditorGUILayout.PrefixLabel("Create File value");
+        var script_creatFileWdith_Input = target as Windows_UI;
+        script_creatFileWdith_Input.createFileWidth_Input = EditorGUILayout.ObjectField("Wdith_Input", script_creatFileWdith_Input.createFileWidth_Input, typeof(InputField), true) as InputField;
+
+        var script_createFileWidth_Text = target as Windows_UI;
+        script_createFileWidth_Text.createFilewidth_Text = EditorGUILayout.ObjectField("Width_Text", script_createFileWidth_Text.createFilewidth_Text, typeof(Text), true) as Text;
+
+        var script_createFileHeight_Input = target as Windows_UI;
+        script_createFileHeight_Input.createFileHeight_Input = EditorGUILayout.ObjectField("Height_Input", script_createFileHeight_Input.createFileHeight_Input, typeof(InputField), true) as InputField;
+
+        var script_createFileHeight_Text = target as Windows_UI;
+        script_createFileHeight_Text.createFileheight_Text = EditorGUILayout.ObjectField("Height_Text", script_createFileHeight_Text.createFileheight_Text, typeof(Text), true) as Text;
+
+        var script_createFileName_Input = target as Windows_UI;
+        script_createFileName_Input.createFileFileName_Input = EditorGUILayout.ObjectField("FileName_Input", script_createFileName_Input.createFileFileName_Input, typeof(InputField), true) as InputField;
+
+        var script_createFileName_Text = target as Windows_UI;
+        script_createFileName_Text.createFileName_Text = EditorGUILayout.ObjectField("CreateFileName_Text", script_createFileName_Text.createFileName_Text, typeof(Text), true) as Text;
     }
 }
 
@@ -38,14 +58,21 @@ public class Windows_UI : MonoBehaviour
     public Button file, edit;   
     StatusBar statusBar;
 
+    // statusBar_File VariablesValus
     public Button createFile, saveFile, openFile, quit;
     StatusBar_File statusBar_File;
+
+    // createFileObj VariablesValus
+    public InputField createFileWidth_Input, createFileHeight_Input, createFileFileName_Input;
+    CreateFile_View createFile_View;
+    public Text createFilewidth_Text, createFileheight_Text, createFileName_Text;
 
     // 解構子
     ~Windows_UI()
     {
         statusBar = null;
         statusBar_File = null;
+        createFile_View = null;
     }
 
    
@@ -55,16 +82,20 @@ public class Windows_UI : MonoBehaviour
     private void Start()
     {
         // 介面
-        statusBar = new StatusBar(file, edit);
+        /*statusBar = new StatusBar(file, edit);
         statusBar.StatusBar_function();
 
         statusBar_File = new StatusBar_File(createFile, saveFile, openFile, quit);
-        statusBar_File.statusBar_File();
+        statusBar_File.statusBar_File();*/
+
+        createFile_View = new CreateFile_View(createFileWidth_Input, createFilewidth_Text, createFileHeight_Input, createFileheight_Text, createFileFileName_Input, createFileName_Text, null, null);
+        createFile_View.createFile_View();
     }
 
     private void FixedUpdate()
     {
         // 顯示視窗-loop 更新
-        statusBar_File.statusBarFile_display();
+        // statusBar_File.statusBarFile_display();
+        
     }
 }

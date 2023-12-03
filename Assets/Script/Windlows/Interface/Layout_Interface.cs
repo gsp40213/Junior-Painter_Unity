@@ -24,5 +24,5 @@ public interface StatusBar_File_Interface
 
 public interface CreateFile_Interface
 {
-    
+    void ceateFileEnter_Active();
 }

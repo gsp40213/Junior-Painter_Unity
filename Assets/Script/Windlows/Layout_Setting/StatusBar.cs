@@ -52,11 +52,11 @@ public class StatusBar : StatisBar_Interface
     public void StatusBar_function()
     {
         // fileButton
-        fileBtn_Setting = new Button_Setting(file, 0.16f, 1.86f, 0.3f, 0.2f, file_Active);
-        fileBtn_Setting.textStyle(fileTextFont, FontStyle.Normal, "檔案", TextAnchor.MiddleCenter, Color.black, 28, 0);
+        fileBtn_Setting = new Button_Setting(file, VariablesValus.FILE_BTN_POINTX, VariablesValus.FILE_BTN_POINTY, VariablesValus.FILE_BTN_SIZEX, VariablesValus.FILE_BTN_SIZEY, file_Active);
+        fileBtn_Setting.textStyle(fileTextFont, FontStyle.Normal, VariablesValus.CREATEFILE_BTN_NAME, TextAnchor.MiddleCenter, Color.black, VariablesValus.FILE_BTN_TEXTSIZE, VariablesValus.FILE_BTN_CHILDNUM);
 
         // editButton
-        editBtn_Setting = new Button_Setting(edit, 0.5f, 1.86f, 0.3f, 0.2f, edit_Active);
-        editBtn_Setting.textStyle(editTextFont, FontStyle.Normal, "編輯", TextAnchor.MiddleCenter, Color.black, 28, 0);
+        editBtn_Setting = new Button_Setting(edit, VariablesValus.EDITOR_BTN_POINTX, VariablesValus.EDITOR_BTN_POINTY, VariablesValus.EDITOR_BTN_SIZEX, VariablesValus.EDITOR_BTN_SIZEY, edit_Active);
+        editBtn_Setting.textStyle(editTextFont, FontStyle.Normal, VariablesValus.EDITOR_BTN_NAME, TextAnchor.MiddleCenter, Color.black, VariablesValus.EDITOR_BTN_TEXTSIZE, VariablesValus.EDITOR_BTN_CHILDNUM);
     }
 }

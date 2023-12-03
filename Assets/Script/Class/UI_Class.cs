@@ -172,6 +172,70 @@ public abstract class UI_Class
         public abstract void areaText(Vector2 anchorsMin, Vector2 anchorsMax, Vector2 pivot);
     }
 
+
+
+    /// <summary>
+    /// ToggleSetting
+    /// </summary>
+    /// <param toggle="Toggle"></param>
+    /// <param pointX="float"></param>
+    /// <param pointY="float"></param>
+    /// <param breakGroud="Sprite"></param>
+    /// <param checkmark="Sprite"></param>    
+    public abstract class ToggleSetting
+    {
+        protected Toggle toggle;
+        protected float pointX, pointY;
+        protected Sprite breakGroud;
+        protected Sprite checkmark;
+
+        public ToggleSetting(Toggle toggle, Sprite breakGroud, Sprite checkmark, float pointX, float pointY)
+        {
+            this.toggle = toggle;
+            this.breakGroud = breakGroud;
+            this.checkmark = checkmark;
+            this.pointX = pointX;
+            this.pointY = pointY;
+        }
+
+
+        /// <summary>
+        /// breakGroud_ImageType
+        /// </summary>
+        /// <param color="color"></param>
+        /// <param rayTarget="bool"></param>
+        /// <param maskable="bool"></param>
+        /// <param type="Image.Type"></param>
+        /// <param childNum="int"></param>
+        public abstract void breakGroud_ImageType(Color color, bool rayTarget, bool maskable, Image.Type type, int childNum);
+
+        /// <summary>
+        /// checkmark_ImageType
+        /// </summary>
+        /// <param color="color"></param>
+        /// <param rayTarget="bool"></param>
+        /// <param maskable="bool"></param>
+        /// <param type="Image.Type"></param>
+        /// <param breakGroud_transform="Transform"></param>
+        /// <param childNum="int"></param>
+        public abstract void checkmark_ImageType(Color color, bool rayTarget, bool maskable, Image.Type type, 
+            Transform breakGroud_transform, int childNum);
+
+        /// <summary>
+        /// textStyle
+        /// </summary>
+        /// <param font="Font"></param>
+        /// <param fontStyle="FontStyle"></param>
+        /// <param message="string"></param>
+        /// <param textAnchor="TextAnchor"></param>
+        /// <param color="Color"></param>
+        /// <param textSize="int"></param>
+        /// <param childNum="int"></param>
+        /// <returns></returns>
+        public abstract void textStyle(Font font, FontStyle fontStyle, string message, TextAnchor textAnchor,
+            Color color, int textSize, int childNum);
+    }
+
     /// <summary>
     /// AreaSetting
     /// <para rectTransform="RectTransform"></para>

@@ -43,7 +43,15 @@ public class StatusBar_File : StatusBar_File_Interface
         this.openFile = openFile;
         this.quit = quit;
 
-        // 取得按鈕底下Text物件屬性
+        // get child
+        getChild();
+
+    }
+
+   
+    private void getChild()
+    {
+        // get Font 
         createFileTextFont = createFile.transform.GetChild(0).GetComponent<Text>().font;
         saveFileTextFont = saveFile.transform.GetChild(0).GetComponent<Text>().font;
         openFileTextFont = openFile.transform.GetChild(0).GetComponent<Text>().font;
@@ -88,20 +96,20 @@ public class StatusBar_File : StatusBar_File_Interface
     public void statusBar_File()
     {      
         // 建立新檔
-        createFileBtn_Setting = new Button_Setting(createFile, 0.16f, 1.62f, 0.3f, 0.13f, createFile_Active);
-        createFileBtn_Setting.textStyle(createFileTextFont, FontStyle.Normal, "建立新檔案", TextAnchor.MiddleCenter, Color.black, 28, 0);
+        createFileBtn_Setting = new Button_Setting(createFile, VariablesValus.CREATEFILE_BTN_POINTX, VariablesValus.CREATEFILE_BTN_POINTY, VariablesValus.CREATEFILE_BTN_SIZEX, VariablesValus.CREATEFILE_BTN_SIZEY, createFile_Active);
+        createFileBtn_Setting.textStyle(createFileTextFont, FontStyle.Normal, VariablesValus.CREATEFILE_BTN_NAME, TextAnchor.MiddleCenter, Color.black, VariablesValus.CREATEFILE_BTN_TEXTSZIE, VariablesValus.CREATEFILE_BTN_CHILDNUM);
 
         // 另存新檔
-        saveFileBtn_Setting = new Button_Setting(saveFile, 0.16f, 1.48f, 0.3f, 0.13f, saveFile_Active);
-        saveFileBtn_Setting.textStyle(saveFileTextFont, FontStyle.Normal, "另存新檔", TextAnchor.MiddleCenter, Color.black, 28, 0);
+        saveFileBtn_Setting = new Button_Setting(saveFile, VariablesValus.SAVEFILE_BTN_POINTX, VariablesValus.SAVEFILE_BTN_POINTY, VariablesValus.SAVEFILE_BTN_SIZEX, VariablesValus.SAVEFILE_BTN_SIZEY, saveFile_Active);
+        saveFileBtn_Setting.textStyle(saveFileTextFont, FontStyle.Normal, VariablesValus.SAVEFILE_BTN_NAME, TextAnchor.MiddleCenter, Color.black, VariablesValus.SAVEFILE_BTN_TEXTSIZE, VariablesValus.SAVEFILE_BTN_CHILDNUM);
 
         // 開啟檔案
-        openFileBtn_Setting = new Button_Setting(openFile, 0.16f, 1.34f, 0.3f, 0.13f, openFile_Active);
-        openFileBtn_Setting.textStyle(openFileTextFont, FontStyle.Normal, "開啟檔案", TextAnchor.MiddleCenter, Color.black, 28, 0);
+        openFileBtn_Setting = new Button_Setting(openFile, VariablesValus.OPENFILE_BTN_POINTX, VariablesValus.OPENFILE_BTN_POINTY, VariablesValus.OPENFILE_BTN_SIZEX, VariablesValus.OPENFILE_BTN_SIZEY, openFile_Active);
+        openFileBtn_Setting.textStyle(openFileTextFont, FontStyle.Normal, VariablesValus.OPENFILE_BTN_NAME, TextAnchor.MiddleCenter, Color.black, VariablesValus.OPENFILE_BTN_TEXTSIZE, VariablesValus.OPENFILE_BTN_CHILDNUM);
 
         // 離開
-        quitBtn_Setting = new Button_Setting(quit, 0.16f, 1.2f, 0.3f, 0.13f, quit_Active);
-        quitBtn_Setting.textStyle(quitTextFont, FontStyle.Normal, "離開", TextAnchor.MiddleCenter, Color.black, 28, 0);
+        quitBtn_Setting = new Button_Setting(quit, VariablesValus.QUIT_BTN_POINTX, VariablesValus.QUIT_BTN_POINTY, VariablesValus.QUIT_BTN_SIZEX, VariablesValus.QUIT_BTN_SIZEY, quit_Active);
+        quitBtn_Setting.textStyle(quitTextFont, FontStyle.Normal, VariablesValus.QUIT_BTN_NAME, TextAnchor.MiddleCenter, Color.black, VariablesValus.QUIT_BTN_TEXTSIZE, VariablesValus.QUIT_BTN_CHILDNUM);
 
     }
 }
