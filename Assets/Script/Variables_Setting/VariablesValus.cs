@@ -10,6 +10,16 @@ public class VariablesValus
     public static bool FILE_ACTIVE_SW_SET { set { _FILE_ACTIVE_SW = value; } }
     public static bool FILE_ACTIVE_SW_GET { get { return _FILE_ACTIVE_SW; } }
 
+    // createFile button active
+    private static bool _CREATE_ACTVIE_SW = false;
+    public static bool _CREATE_ACTVIE_SW_SET { set { _CREATE_ACTVIE_SW = value; } }
+    public static bool _CREATE_ACTVIE_SW_GET { get { return _CREATE_ACTVIE_SW; } }
+
+    // saveFile button active
+    private static bool _SAVEFILE_ACTVIE_SW = false;
+    public static bool _SAVEFILE_ACTVIE_SW_SET { set { _CREATE_ACTVIE_SW = value; } }
+    public static bool _SAVEFILE_ACTVIE_SW_GET { get { return _CREATE_ACTVIE_SW; } }
+
     /* startusBar_File createFile button :
      * button point and size or button string (name, textSize, chlid obj)
      * textSize Default value: 28
@@ -130,6 +140,7 @@ public class VariablesValus
 
     /* createFile_view HeightText Text :
      * point and size or Text Number (IntegerNumber)
+     * text textName: string
      * textSize Default value: 22
      */
     public static float CREATEFILE_TEXTHEIGHT_POINTX = 0.78f;
@@ -153,6 +164,7 @@ public class VariablesValus
 
     /* createFile_view WidthText Text :
      * point and size or Text Number (IntegerNumber)
+     * text textName: string
      * textSize Default value: 22
      */
     public static float CREATEFILE_TEXTFILE_POINTX = 0.87f;
@@ -161,4 +173,33 @@ public class VariablesValus
     public static float CREATEFILE_TEXTFILE_SIZEY = 0.15f;
     public static string CREATEFILE_TEXTFILE_NAME = "檔案名稱(FileName)";
     public static int CREATEFILE_TEXTFILE_TEXTSIZE = 22;
+
+    /* createFile_view Transparent Toggle :
+     * toggle posistion: point (float)
+     * breakGroud_ImageType childNum Default value: 0 (Transparent Toggle obj Child)
+     * checkmark_ImageType childNum Default value: 0 (breakGroud_Toggle obj Child)
+     * toggle textName : string
+     * textSize_Toggole : 14
+     * textStyle childNum Default value: 1 (Transparent Toggle obj Child)     
+     */
+    public static float CREATEFILE_TRANSPARENT_TOGGLE_POINTX = 1.4f;
+    public static float CREATEFILE_TRANSPARENT_TOGGLE_POINTY = 1.3f;
+    public static int CREATEFILE_TRANSPARENT_BREAKGROUD_CHILDNUM = 0;
+    public static int CREATEFILE_TRANSPARENT_CHECKMARK_CHILDNUM = 0;
+    public static string CREATEFILE_TRANSPARENT_NAME = "透明度(Transparent)";
+    public static int CREATEFILE_TRANSPARENT_TEXTSIZE = 14;
+    public static int CREATEFILE_TRANSPARENT_TEXT_CHILDNUM = 1;
+
+    /* createFile enter button :
+     * point and size or button string (name, textSize, chlid obj)
+     * textSize Default value: 28
+     * childNum Default value: 0
+     */
+    public static float CREATEFILE_ENTER_BTN_POINTX = 1.38f;
+    public static float CREATEFILE_ENTER_BTN_POINTY = 1f;
+    public static float CREATEFILE_ENTER_BTN_SIZEX = 0.3f;
+    public static float CREATEFILE_ENTER_BTN_SIZEY = 0.13f;
+    public static string CREATEFILE_ENTER_BTN_NAME = "確定";
+    public static int CREATEFILE_ENTER_BTN_TEXTSIZE = 28;
+    public static int CREATEFILE_ENTER_BTN_CHILDNUM = 0;
 }

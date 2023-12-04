@@ -45,7 +45,6 @@ public class StatusBar_File : StatusBar_File_Interface
 
         // get child
         getChild();
-
     }
 
    
@@ -61,24 +60,32 @@ public class StatusBar_File : StatusBar_File_Interface
     // 建立檔案
     public void createFile_Active()
     {
+        VariablesValus._CREATE_ACTVIE_SW_SET = true;
+        VariablesValus.FILE_ACTIVE_SW_SET = false;
         Debug.Log("建立新檔案按鈕");
     }
 
     // 開啟檔案
     public void openFile_Active()
     {
+        VariablesValus.FILE_ACTIVE_SW_SET = false;        
+
         Debug.Log("開啟檔案按鈕");
     }
 
     // 離開
     public void quit_Active()
     {
+        VariablesValus.FILE_ACTIVE_SW_SET = false;
         Debug.Log("離開程式");
     }
 
     // 另存檔案
     public void saveFile_Active()
     {
+        VariablesValus.FILE_ACTIVE_SW_SET = false;
+        VariablesValus._CREATE_ACTVIE_SW_SET = false;        
+
         Debug.Log("另存檔按鈕");
     }    
 

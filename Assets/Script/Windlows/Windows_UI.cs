@@ -50,6 +50,12 @@ public class WindwosUI_Editor : Editor
 
         var script_createFileName_Text = target as Windows_UI;
         script_createFileName_Text.createFileName_Text = EditorGUILayout.ObjectField("CreateFileName_Text", script_createFileName_Text.createFileName_Text, typeof(Text), true) as Text;
+
+        var script_createFileTransparent_Toggle = target as Windows_UI;
+        script_createFileTransparent_Toggle.createFileTransparent_Toggle = EditorGUILayout.ObjectField("Transparent_Toggle", script_createFileTransparent_Toggle.createFileTransparent_Toggle, typeof(Toggle)) as Toggle;
+
+        var script_createFileEnter_Button = target as Windows_UI;
+        script_createFileEnter_Button.createFileEnter_Btn = EditorGUILayout.ObjectField("Enter_Button", script_createFileEnter_Button.createFileEnter_Btn, typeof (Button)) as Button;
     }
 }
 
@@ -66,6 +72,8 @@ public class Windows_UI : MonoBehaviour
     public InputField createFileWidth_Input, createFileHeight_Input, createFileFileName_Input;
     CreateFile_View createFile_View;
     public Text createFilewidth_Text, createFileheight_Text, createFileName_Text;
+    public Toggle createFileTransparent_Toggle;
+    public Button createFileEnter_Btn;
 
     // 解構子
     ~Windows_UI()
@@ -82,20 +90,22 @@ public class Windows_UI : MonoBehaviour
     private void Start()
     {
         // 介面
-        /*statusBar = new StatusBar(file, edit);
+        statusBar = new StatusBar(file, edit);
         statusBar.StatusBar_function();
 
         statusBar_File = new StatusBar_File(createFile, saveFile, openFile, quit);
-        statusBar_File.statusBar_File();*/
+        statusBar_File.statusBar_File();
 
-        createFile_View = new CreateFile_View(createFileWidth_Input, createFilewidth_Text, createFileHeight_Input, createFileheight_Text, createFileFileName_Input, createFileName_Text, null, null);
+        createFile_View = new CreateFile_View(createFileWidth_Input, createFilewidth_Text, createFileHeight_Input, createFileheight_Text, createFileFileName_Input, createFileName_Text, createFileTransparent_Toggle, createFileEnter_Btn);
         createFile_View.createFile_View();
+
+        
     }
 
     private void FixedUpdate()
     {
         // 顯示視窗-loop 更新
-        // statusBar_File.statusBarFile_display();
-        
+         statusBar_File.statusBarFile_display();
+        createFile_View.createFile_display();
     }
 }

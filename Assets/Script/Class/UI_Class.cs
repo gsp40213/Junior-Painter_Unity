@@ -189,7 +189,7 @@ public abstract class UI_Class
         protected Sprite breakGroud;
         protected Sprite checkmark;
 
-        public ToggleSetting(Toggle toggle, Sprite breakGroud, Sprite checkmark, float pointX, float pointY)
+        public ToggleSetting(Toggle toggle, float pointX, float pointY)
         {
             this.toggle = toggle;
             this.breakGroud = breakGroud;
@@ -224,7 +224,6 @@ public abstract class UI_Class
         /// <summary>
         /// textStyle
         /// </summary>
-        /// <param font="Font"></param>
         /// <param fontStyle="FontStyle"></param>
         /// <param message="string"></param>
         /// <param textAnchor="TextAnchor"></param>
@@ -232,7 +231,7 @@ public abstract class UI_Class
         /// <param textSize="int"></param>
         /// <param childNum="int"></param>
         /// <returns></returns>
-        public abstract void textStyle(Font font, FontStyle fontStyle, string message, TextAnchor textAnchor,
+        public abstract void textStyle(FontStyle fontStyle, string message, TextAnchor textAnchor,
             Color color, int textSize, int childNum);
     }
 

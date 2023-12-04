@@ -38,6 +38,7 @@ public class StatusBar : StatisBar_Interface
     {
         VariablesValus.STARTUSBAR_SW_SET = 1;
         VariablesValus.FILE_ACTIVE_SW_SET = !VariablesValus.FILE_ACTIVE_SW_GET;
+        VariablesValus._CREATE_ACTVIE_SW_SET = false;
     }
 
     // EditBtn OnClick
