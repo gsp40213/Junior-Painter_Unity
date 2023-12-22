@@ -202,4 +202,21 @@ public class VariablesValus
     public static string CREATEFILE_ENTER_BTN_NAME = "確定";
     public static int CREATEFILE_ENTER_BTN_TEXTSIZE = 28;
     public static int CREATEFILE_ENTER_BTN_CHILDNUM = 0;
+
+    /* createFile Function Get Variables
+     * width
+     * height
+     * fileName
+     * transparent
+     */
+    public static int CRATEFILE_WIDTH_VARIBALES;
+    public static int CREATEFILE_HEIGHT__VARIBALES;
+    public static string CREATEFILE_FILENAME__VARIBALES;
+    public static bool CREATEFILE_TRANSPARENT__VARIBALES;
+
+    /* canvas RectTransform 
+     * rectTransform UI posistion and size
+     * anchoredPosition 
+     */
+    public static RectTransform CANVAS_RECT_TRANSFORM;
 }

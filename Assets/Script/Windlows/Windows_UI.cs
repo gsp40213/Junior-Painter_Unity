@@ -96,6 +96,7 @@ public class Windows_UI : MonoBehaviour
         statusBar_File = new StatusBar_File(createFile, saveFile, openFile, quit);
         statusBar_File.statusBar_File();
 
+        // 建立檔案
         createFile_View = new CreateFile_View(createFileWidth_Input, createFilewidth_Text, createFileHeight_Input, createFileheight_Text, createFileFileName_Input, createFileName_Text, createFileTransparent_Toggle, createFileEnter_Btn);
         createFile_View.createFile_View();
 
@@ -105,7 +106,7 @@ public class Windows_UI : MonoBehaviour
     private void FixedUpdate()
     {
         // 顯示視窗-loop 更新
-         statusBar_File.statusBarFile_display();
+        statusBar_File.statusBarFile_display();
         createFile_View.createFile_display();
     }
 }

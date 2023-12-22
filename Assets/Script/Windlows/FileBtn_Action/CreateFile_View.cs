@@ -41,6 +41,8 @@ public class CreateFile_View : CreateFile_Interface
     private Button_Setting buttonEnter_Setting;
     private Font buttonEnter_Font;
 
+    private Canvas_Setting canvas_Setting;
+
     public CreateFile_View(InputField inputWidth, Text textWdith, InputField inputHeight, Text textHeight, InputField inputFileName,
         Text textFileName, Toggle toggleTransparent, Button buttonEnter)
     {
@@ -73,7 +75,14 @@ public class CreateFile_View : CreateFile_Interface
     public void ceateFileEnter_Active()
     {
         Debug.Log("建立檔案成功");
-        //  VariablesValus.FILE_ACTIVE_SW_SET = false;
+        
+        VariablesValus.CRATEFILE_WIDTH_VARIBALES = int.Parse(inputWidth.text);
+        VariablesValus.CREATEFILE_HEIGHT__VARIBALES = int.Parse(inputHeight.text);
+        VariablesValus.CREATEFILE_FILENAME__VARIBALES = inputFileName.text;
+        VariablesValus.CREATEFILE_TRANSPARENT__VARIBALES = toggleTransparent.isOn;
+
+        canvas_Setting = new Canvas_Setting(VariablesValus.CREATEFILE_TRANSPARENT__VARIBALES, VariablesValus.CRATEFILE_WIDTH_VARIBALES, VariablesValus.CREATEFILE_HEIGHT__VARIBALES);
+        canvas_Setting.canvasFunction(); 
     }
 
     public void createFile_display()
@@ -85,8 +94,7 @@ public class CreateFile_View : CreateFile_Interface
         inputFileName.gameObject.SetActive(VariablesValus._CREATE_ACTVIE_SW_GET);
         textFileName.gameObject.SetActive(VariablesValus._CREATE_ACTVIE_SW_GET);
         toggleTransparent.gameObject.SetActive(VariablesValus._CREATE_ACTVIE_SW_GET);
-        buttonEnter.gameObject.SetActive(VariablesValus._CREATE_ACTVIE_SW_GET);
-
+        buttonEnter.gameObject.SetActive(VariablesValus._CREATE_ACTVIE_SW_GET);      
     }
 
     public void createFile_View()
