@@ -99,8 +99,7 @@ public class Windows_UI : MonoBehaviour
         // 建立檔案
         createFile_View = new CreateFile_View(createFileWidth_Input, createFilewidth_Text, createFileHeight_Input, createFileheight_Text, createFileFileName_Input, createFileName_Text, createFileTransparent_Toggle, createFileEnter_Btn);
         createFile_View.createFile_View();
-
-        
+               
     }
 
     private void FixedUpdate()

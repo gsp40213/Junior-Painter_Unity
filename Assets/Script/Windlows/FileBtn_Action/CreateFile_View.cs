@@ -82,7 +82,9 @@ public class CreateFile_View : CreateFile_Interface
         VariablesValus.CREATEFILE_TRANSPARENT__VARIBALES = toggleTransparent.isOn;
 
         canvas_Setting = new Canvas_Setting(VariablesValus.CREATEFILE_TRANSPARENT__VARIBALES, VariablesValus.CRATEFILE_WIDTH_VARIBALES, VariablesValus.CREATEFILE_HEIGHT__VARIBALES);
-        canvas_Setting.canvasFunction(); 
+        canvas_Setting.transparentFunction();
+
+        VariablesValus._CREATE_ACTVIE_SW_SET = false;
     }
 
     public void createFile_display()

@@ -5,50 +5,51 @@ using UnityEngine.UI;
 
 public class Canvas_Setting : Canvas_Class
 {
-    private Texture2D canvasImage;
-    private GameObject CanvasObj;
+    private Texture2D canvasImage, transparent_Image;
+    private GameObject CanvasObj, transparent;
 
-    public Canvas_Setting (bool transparent, int width, int height) : base(transparent, width, height)
+
+    public Canvas_Setting(bool transparent, int width, int height) : base(transparent, width, height)
     {
-        canvasImage = new Texture2D(width, height);        
+        canvasImage = new Texture2D(width, height);
+        transparent_Image = new Texture2D(width, height);
     }
 
-    public override GameObject canvasFunction()
+    public override GameObject transparentFunction()
     {
-        
-        
-        if (GameObject.Find("CanvasObj") == null)
+        if (GameObject.Find("Transparent") == null)
         {
-            CanvasObj = new GameObject("CanvasObj");
-            CanvasObj.AddComponent<RectTransform>();
-            CanvasObj.AddComponent<CanvasRenderer>();
-            CanvasObj.AddComponent<RawImage>();
+            transparent = new GameObject("Transparent");
+            transparent.AddComponent<RectTransform>();
+            transparent.AddComponent<CanvasRenderer>();
+            transparent.AddComponent<RawImage>();
 
             GameObject canvas_parent = GameObject.Find("Canvas");
-            CanvasObj.transform.parent = canvas_parent.transform;
+            transparent.transform.parent = canvas_parent.transform;
 
-            RawImage rawImage = CanvasObj.GetComponent<RawImage>();
-            rawImage.texture = canvasSetting();
-
-            return CanvasObj;
+            RawImage rawImage = transparent.GetComponent<RawImage>();
+            rawImage.texture = transparentSetting();
+     
+            return transparent;
         }
 
-        return CanvasObj;
+        return transparent;
     }
 
-    private Texture2D canvasSetting()
+    // transparent Setting
+    private Texture2D transparentSetting()
     {
-        VariablesValus.CANVAS_RECT_TRANSFORM = canvasFunction().GetComponent<RectTransform>();
+        VariablesValus.CANVAS_RECT_TRANSFORM = transparentFunction().GetComponent<RectTransform>();
         VariablesValus.CANVAS_RECT_TRANSFORM.anchoredPosition = new Vector2(Screen.width / Screen.width, Screen.height / Screen.height);
 
-        VariablesValus.CANVAS_RECT_TRANSFORM.sizeDelta = new Vector2(canvasImage.width, canvasImage.height);
+        VariablesValus.CANVAS_RECT_TRANSFORM.sizeDelta = new Vector2(transparent_Image.width, transparent_Image.height);
         VariablesValus.CANVAS_RECT_TRANSFORM.pivot = new Vector2(0.5f, 0.5f);
         VariablesValus.CANVAS_RECT_TRANSFORM.localScale = new Vector2(1, 1);
 
-        canvasImage.SetPixels(canvasTransparent());
-        canvasImage.Apply();
+        WWW path = new WWW("File://" + Application.dataPath + "/R.png");
+        transparent_Image = path.texture;
 
-        return canvasImage;
+        return transparent_Image;
     }
 
     // 透明度
@@ -58,7 +59,7 @@ public class Canvas_Setting : Canvas_Class
 
         for (int x = 0; x < color.Length; x++)
         {
-            if (transparent.Equals(true))
+            if (VariablesValus.CREATEFILE_TRANSPARENT__VARIBALES.Equals(true))
                 color[x] = new Color(0, 0, 0, 0);
             else color[x] = Color.white;
         }
